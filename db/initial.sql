@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `subscribers` (
 
 
 INSERT INTO `subscribers` (`id`, `name`, `accesskey`, `secret`, `alloworigin`, `credits`, `isactive`) VALUES
-	(1, 'Demo', '00001-almagro', 'F9A08BA54DA9672B91B399487C07BF411F65C8D6F1C54', 'https://demo', 1000000, 1);
+	(1, 'Demo', '00001-almagro', 'F9A08BA54DA9672B91B399487C07BF411F65C8D6F1C54', 'https://demo.local', 1000000, 1);
 
 
 CREATE TABLE IF NOT EXISTS `subscribers_packages` (
