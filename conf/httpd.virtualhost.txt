@@ -1,0 +1,22 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteRule ^(.+\.cf[cm])(/.*)?$ http://%{HTTP_HOST}:8888$1$2 [P]
+RewriteRule ^([a-zA-Z0-9/-]+[^/])$ $1/ [R=301,L]
+
+# rewrite subscriber id
+RewriteRule ^/v1/s-([a-z0-9-]+)/reports/([a-z]+)/(.*)$ http://%{HTTP_HOST}:8888/index.cfm/reports/$2/?s=$1$3 [NE,P]
+RewriteRule ^/v1/s-([a-z0-9-]+)/users/login/$ http://%{HTTP_HOST}:8888/index.cfm/users/login/?s=$1$3 [NE,P]
+RewriteRule ^/v1/s-([a-z0-9-]+)/users/ping/$ http://%{HTTP_HOST}:8888/index.cfm/users/ping/?s=$1$3 [NE,P]
+RewriteRule ^/v1/s-([a-z0-9-]+)/users/logout/$ http://%{HTTP_HOST}:8888/index.cfm/users/logout/?s=$1$3 [NE,P]
+RewriteRule ^/v1/s-([a-z0-9-]+)/users/redeem/$ http://%{HTTP_HOST}:8888/index.cfm/users/redeem/?s=$1 [NE,P]
+RewriteRule ^/v1/s-([a-z0-9-]+)/([a-z]+)/([0-9]+)/$ http://%{HTTP_HOST}:8888/index.cfm/$2/$3/?s=$1 [NE,P]
+RewriteRule ^/v1/s-([a-z0-9-]+)/([a-z]+)/$ http://%{HTTP_HOST}:8888/index.cfm/$2/?s=$1 [NE,P]
+
+<Directory "/YOUR/PATH/HERE/api.local">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
