@@ -1,0 +1,713 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ttt-api",
+		"_postman_id": "705677ac-dea8-23db-166c-232e1831dcb2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Version",
+			"request": {
+				"url": "api.ttt",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activities: LIST",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/activities/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activities: GET",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/activities/216/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activities: ADD without Task",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/activities/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Creating new activity without a task\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activities: ADD with Task",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/activities/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskid\": \"124\",\r\n    \"description\": \"Creating new activity for task\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activities: UPDATE without Task",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/activities/90/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"Updated description\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activities: UPDATE with Task",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/activities/90/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"taskid\": 42, \"description\":\"Updated description\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activities: DELETE",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/activities/31/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activities: QUICKSTART without Task",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/activities/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Quickly starting new activity without a task\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activities: QUICKSTART with Task",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/tasks/12/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Creating new activity with a task\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Activities: TOGGLE",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/activities/216/",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "//Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks: LIST",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/tasks/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks: GET",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/tasks/91/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks: ADD without Project",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/tasks/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{'title':'Some Title for New Task','description':'Some Description for New Task'}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks: ADD with Project",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/tasks/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{'projectid':8,'title':'Some Title for New Task','description':'Some Description for New Task'}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks: UPDATE without Project",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/tasks/112/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{'title':'Release','description':'Release activities'}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks: UPDATE with Project",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/tasks/112/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{'projectid':12,'title':'Release','description':'Release activities'}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks: DELETE",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/tasks/94/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "//Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks: QUICKSTART without Project",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/tasks/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{'title':'Quickstarted Task','description':'Quickstarted Activity'}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks: QUICKSTART with Project",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/projects/15/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{'title':'Quickstarted Project Task','description':'Quickstarted Project Task Activity'}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks: STOP",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/tasks/126/",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "//Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Projects: LIST",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/projects/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Projects: GET",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/projects/1/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Projects: ADD",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/projects/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{'name':'Some New Project','description':'Freshly created Project'}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Projects: UPDATE",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/projects/17/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{'name':'Some Great New Project','description':'Freshly created great Project'}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Projects: DELETE",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/projects/17/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					},
+					{
+						"key": "//Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Reports: Summary",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/reports/summary/&from=2017-01-01&to=2017-03-31",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Reports: Activity",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/reports/activity/&from=2017-01-01&to=2017-03-31",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Reports: Timelog",
+			"request": {
+				"url": "api.ttt/v1/s-00001-almagro/reports/timelog/&from=2017-01-01&to=2017-03-31",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Users: PING",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/users/ping/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SESSIONTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Pinging user to boost up session and get current activity data"
+			},
+			"response": []
+		},
+		{
+			"name": "Users: PING",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/users/ping/",
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Access-Control-Request-Method",
+						"value": "GET",
+						"description": ""
+					},
+					{
+						"key": "Access-Control-Request-Headers",
+						"value": "authorization",
+						"description": ""
+					},
+					{
+						"key": "Origin",
+						"value": "http://demo.ttt",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Pinging user to boost up session and get current activity data"
+			},
+			"response": []
+		},
+		{
+			"name": "Users: REDEEM PACKAGE",
+			"request": {
+				"url": "http://api.ttt/v1/s-00001-almagro/users/redeem/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{ADMINTOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{'package':'2EA527B3-C726-4BA8-8201-D12012981272'}"
+				},
+				"description": "Redeeming pass package"
+			},
+			"response": []
+		}
+	]
+}
